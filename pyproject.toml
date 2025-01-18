@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "icedrive-blob"
+version = "0.0.1"
+authors = [
+  { name="Adrián Utrilla Sánchez", email="adrian.utrilla@alu.uclm.es" },
+]
+description = "Implementation of IceDrive Blob service"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-only"
+dependencies = [
+    "zeroc-ice>=3.7",
+]
+
+[project.optional-dependencies]
+tests = ["pytest"]
+linters = ["black", "ruff", "pydocstyle"]
+
+[project.urls]
+"Homepage" = "https://github.com/UtriVnts/Entregable1SSDD"
+
+[project.scripts]
+icedrive-blob = "icedrive_blob.app:main"
+
+[tool.ruff]
+# Skip test for warn about E402 (Module level import not at top of file) and F401 (`IceDrive` imported but unused)
+ignore = ["E402", "F401"]
